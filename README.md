@@ -14,7 +14,6 @@
   </a>
 </p>
 
-
 # PDF Invoice Receipt Stamper
 
 > This repository is a technical presentation and documentation repository.  
@@ -23,6 +22,13 @@
 Add-on for the Factur-X EN16931 batch invoicing service. The batch generation engine is available in the [automation_finance](https://github.com/PalksDev/automation_finance) repository.
 
 Password-protected web interface to stamp PDF invoices as "PAID" — one at a time or in bulk, with a client-structured ZIP export.
+
+This tool is designed to be deployed directly  
+within the client's environment.
+
+It allows a payment confirmation stamp to be applied  
+to existing PDF invoices and prepares them  
+for submission to the batch invoicing service.
 
 ---
 
@@ -34,8 +40,14 @@ Password-protected web interface to stamp PDF invoices as "PAID" — one at a ti
 - Client-structured ZIP export for direct forwarding  
 - Red stamp overlaid on the original PDF via FPDI  
 - Password-protected interface with brute-force protection  
-- No database, no persistent storage
+The engine does not rely on any database.
 
+Files are processed temporarily during the stamping process  
+and downloaded immediately.
+
+Depending on the client environment configuration,  
+stamped invoices can also be archived  
+in a dedicated system directory.
 ---
 
 ## Requirements
