@@ -23,8 +23,7 @@ Add-on for the Factur-X EN16931 batch invoicing service. The batch generation en
 
 Password-protected web interface to stamp PDF invoices as "PAID" — one at a time or in bulk, with a client-structured ZIP export.
 
-This tool is designed to be deployed directly  
-within the client's environment.
+This tool is designed to be deployed directly within the client's hosting environment.
 
 It allows a payment confirmation stamp to be applied  
 to existing PDF invoices and prepares them  
@@ -38,7 +37,7 @@ for submission to the batch invoicing service.
 - Auto-detected invoice list with client, reference and period  
 - Single or batch stamping  
 - Client-structured ZIP export for direct forwarding  
-- Red stamp overlaid on the original PDF via FPDI  
+- Red payment stamp overlaid on the original PDF using FPDI  
 - Password-protected interface with brute-force protection  
 The engine does not rely on any database.
 
@@ -91,16 +90,17 @@ The `tmp_acquittement/` directory is created automatically on first access.
 ## How it works
 
 **Single stamp**  
-Click "Acquitter" next to an invoice, enter the payment date, download the stamped PDF.
+Click **"Mark as paid"** next to an invoice, enter the payment date, download the stamped PDF.
 
 **Batch stamp**  
-Check multiple invoices or use "Select all", click "Acquitter la sélection", enter a shared payment date. A ZIP is generated with all stamped PDFs, structured by client reference:
+Select multiple invoices or use **"Select all"**, click **"Mark selection as paid"**, enter a shared payment date.  
+A ZIP is generated with all stamped PDFs, structured by client reference:  
 
 ```
-factures_acquittees.zip
+paid_invoices.zip
   clientRef/
-    F-2025-001_ACQUITTEE.pdf
-    F-2025-002_ACQUITTEE.pdf
+    F-2025-001_PAID.pdf
+    F-2025-002_PAID.pdf
 ```
 
 
