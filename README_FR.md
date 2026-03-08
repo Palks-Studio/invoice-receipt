@@ -2,7 +2,6 @@
   <img src="docs/images/formulaire-acquittement-fr.png" alt="Interface d'acquittement des factures" width="1200">
 </p>
 
-
 > 🇫🇷 Français | [🇬🇧 English](./README.md)
 
 ![License](https://img.shields.io/badge/License-LICENSE.md-lightgreen.svg)
@@ -24,6 +23,13 @@ Addon au service de facturation batch Factur-X EN16931. Le moteur de génératio
 
 Interface web protégée permettant d'apposer un tampon rouge « ACQUITTEE » sur les factures PDF reçues chaque mois, à l'unité ou en lot avec export ZIP structuré par client.
 
+Cet outil est conçu pour être déployé directement  
+dans l’environnement du client.
+
+Il permet d’apposer un tampon d’acquittement  
+sur des factures PDF existantes et de préparer  
+leur envoi au service de facturation batch.
+
 ---
 
 ## Aperçu
@@ -34,7 +40,14 @@ Interface web protégée permettant d'apposer un tampon rouge « ACQUITTEE » su
 - Export ZIP structuré par client pour envoi direct  
 - Tampon rouge superposé sur le PDF original via FPDI  
 - Interface sécurisée par mot de passe, session anti-brute force  
-- Aucune base de données, aucun stockage permanent
+- Aucune base de données n’est utilisée.
+
+Les fichiers sont traités temporairement lors de l’acquittement,  
+puis téléchargés immédiatement.
+
+Selon la configuration de l’environnement client,  
+les factures acquittées peuvent également être archivées  
+dans un dossier dédié du système.
 
 ---
 
