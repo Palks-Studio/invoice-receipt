@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/acquittement-custom-en.png" alt="PDF invoice stamping interface" width="1200">
+  <img src="docs/images/acquittement-en.png" alt="PDF invoice stamping interface" width="1200">
 </p>
 
 > 🇬🇧 English | [🇫🇷 Français](./README_FR.md)
