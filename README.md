@@ -4,9 +4,9 @@
 
 > 🇬🇧 English | [🇫🇷 Français](./README_FR.md)
 
-![License](https://img.shields.io/badge/License-LICENSE.md-lightgreen.svg)
-![Documentation](https://img.shields.io/badge/Focus-Documentation-0095b1?style=flat)
-![Bilingual](https://img.shields.io/badge/Lang-FR%20%2F%20EN-0a5645?style=flat)
+![License](https://img.shields.io/badge/License-MIT-7f8c8d?style=flat)
+![Documentation](https://img.shields.io/badge/Documentation-0095b1?style=flat)
+![Bilingual](https://img.shields.io/badge/Lang-FR%20%2F%20EN-16a085?style=flat)
 
 <p align="center">
   <a href="https://palks-studio.com">
