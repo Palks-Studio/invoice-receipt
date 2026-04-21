@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/acquittement-fr.png" alt="Interface d'acquittement des factures" width="1200">
+  <img src="docs/images/formulaire-acquittement-fr.png" alt="Interface d'acquittement des factures" width="1200">
 </p>
 
 > 🇫🇷 Français | [🇬🇧 English](./README.md)
@@ -64,33 +64,11 @@ dans un dossier dédié du système.
 
 ---
 
-## Installation
+## Déploiement
 
-**1. Cloner ou déposer le fichier sur votre hébergement**
+Cet outil est conçu pour être déployé directement dans l’environnement du client.
 
-```bash
-cd /var/www/votre-dossier
-```
-
-
-**2. Installer les dépendances**
-
-```bash
-composer require setasign/fpdi setasign/fpdf
-```
-
-
-**3. Configurer**
-
-En haut du fichier `acquittement.php`, modifier les deux constantes :
-
-```php
-define('ACCESS_PASSWORD', 'votre_mot_de_passe');
-define('TMP_DIR', __DIR__ . '/tmp_acquittement');
-```
-
-
-Le dossier `tmp_acquittement/` est créé automatiquement au premier accès.
+Aucune procédure d’installation publique n’est fournie.
 
 ---
 
@@ -126,7 +104,7 @@ factures_acquittees.zip
 
 ## Sécurité
 
-- Authentification par mot de passe avec protection anti-brute force (10 tentatives max)  
+- Authentification par mot de passe avec protection contre les tentatives de brute force  
 - Session sécurisée (`httponly`, `secure`, `SameSite=Strict`)  
 - Protection path traversal sur les chemins de fichiers  
 - Validation stricte de la date de paiement  
