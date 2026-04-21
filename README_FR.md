@@ -105,13 +105,12 @@ factures_acquittees.zip
 ## Sécurité
 
 - Authentification par mot de passe avec protection contre les tentatives de brute force  
-- Session sécurisée (`httponly`, `secure`, `SameSite=Strict`)  
-- Protection path traversal sur les chemins de fichiers  
-- Validation stricte de la date de paiement  
-- Fichiers temporaires supprimés après chaque téléchargement  
-- Header `X-Content-Type-Options: nosniff`  
-- `Cache-Control: no-store`
-
+- Gestion sécurisée des sessions  
+- Protection contre les accès non autorisés aux fichiers  
+- Validation stricte des données de paiement  
+- Fichiers temporaires supprimés après traitement  
+- Politique de sécurité des réponses HTTP (type, cache, indexation)
+- 
 ---
 
 ## Contexte
