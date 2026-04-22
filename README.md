@@ -38,6 +38,7 @@ for submission to the batch invoicing service.
 ## Overview
 
 - Monthly ZIP upload via drag & drop  
+- Direct PDF stamping without ZIP — accepts any PDF file  
 - Auto-detected invoice list with client, reference and period  
 - Single or batch stamping  
 - Client-structured ZIP export for direct forwarding  
@@ -73,6 +74,9 @@ No public installation procedure is provided.
 ---
 
 ## How it works
+
+**Direct PDF stamp**  
+Drop any individual PDF file into the dedicated section, enter the payment date, download the stamped PDF immediately. This function accepts any PDF — it is not limited to invoices issued by the batch billing service.
 
 **Single stamp**  
 Click "Mark as paid" next to an invoice, enter the payment date, download the stamped PDF.
