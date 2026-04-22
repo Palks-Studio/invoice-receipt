@@ -38,6 +38,7 @@ leur envoi au service de facturation batch.
 ## Aperçu
 
 - Upload du ZIP mensuel par glisser-déposer  
+- Tampon PDF direct sans ZIP — accepte n'importe quel fichier PDF  
 - Liste des factures détectées avec client, référence et période  
 - Acquittement à l'unité ou sélection multiple  
 - Export ZIP structuré par client pour envoi direct  
@@ -73,6 +74,9 @@ Aucune procédure d’installation publique n’est fournie.
 ---
 
 ## Fonctionnement
+
+**Tampon PDF direct**  
+Déposez directement un fichier PDF individuel dans la section dédiée, indiquez la date de paiement, téléchargez immédiatement le PDF tamponné. Cette fonction accepte n'importe quel PDF — elle n'est pas limitée aux factures issues du service batch.
 
 **Acquittement à l'unité**  
 Cliquez sur « Acquitter » en face d'une facture, indiquez la date de paiement, téléchargez le PDF avec tampon.
@@ -110,7 +114,7 @@ factures_acquittees.zip
 - Validation stricte des données de paiement  
 - Fichiers temporaires supprimés après traitement  
 - Politique de sécurité des réponses HTTP (type, cache, indexation)
-- 
+
 ---
 
 ## Contexte
