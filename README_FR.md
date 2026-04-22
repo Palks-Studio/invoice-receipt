@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/acquittement-fr.png" alt="Interface d'acquittement des factures" width="1200">
+  <img src="docs/images/acquittement-fr.png" alt="Interface d'acquittement des factures" width="600">
 </p>
 
 > 🇫🇷 Français | [🇬🇧 English](./README.md)
