@@ -24,11 +24,9 @@ Addon au service de facturation batch Factur-X EN16931. Le moteur de génératio
 
 Interface web protégée permettant d'apposer un tampon rouge « ACQUITTEE » sur les factures PDF reçues chaque mois, à l'unité ou en lot avec export ZIP structuré par client.
 
-Cet outil est conçu pour être déployé directement  
-dans l’environnement du client.
+Cet outil est conçu pour être déployé directement dans l’environnement du client.
 
-Il permet d’apposer un tampon d’acquittement  
-sur des factures PDF existantes et de préparer  
+Il permet d’apposer un tampon d’acquittement sur des factures PDF existantes et de préparer  
 leur envoi au service de facturation batch.
 
 [![Facturation batch Factur-X](https://img.shields.io/badge/Facturation%20batch%20Factur--X-0095b1?style=flat)](https://palks-studio.com/fr/facturation-batch-facturx)
@@ -46,12 +44,41 @@ leur envoi au service de facturation batch.
 - Interface sécurisée par mot de passe, session anti-brute force  
 - Aucune base de données n’est utilisée.
 
-Les fichiers sont traités temporairement lors de l’acquittement,  
-puis téléchargés immédiatement.
+Les fichiers sont traités temporairement lors de l’acquittement, puis téléchargés immédiatement.
 
-Selon la configuration de l’environnement client,  
-les factures acquittées peuvent également être archivées  
+Selon la configuration de l’environnement client, les factures acquittées peuvent également être archivées  
 dans un dossier dédié du système.
+
+L’archivage éventuel reste entièrement local à l’environnement du client.
+
+Le moteur distingue :  
+
+- les fichiers temporaires utilisés pendant le traitement des ZIPs et la génération PDF  
+- les archives acquittées conservées séparément lorsque cette fonctionnalité est activée
+
+Aucune base de données n’est utilisée pour la conservation des documents.
+
+---
+
+## Structure du projet
+
+```
+invoice-stamper/
+│
+├── tmp_stamper/        → Dossier temporaire utilisé pour l'extraction des ZIP et la génération des PDFs
+│   └── .htaccess       → Bloque l'accès direct au dossier temporaire depuis le web
+│
+├── vendor/             → Dépendances Composer nécessaires au moteur PDF (bibliothèques FPDI / FPDF)
+│
+├── acquitter.php       → Interface web accessible depuis le navigateur (charge le moteur interne)
+├── invoice-stamper.php → Moteur principal de l'application (authentification, traitement ZIP, génération PDF)
+├── archives_zip/       → Archivage des factures acquittées issues du mode batch
+├── archives_pdf/       → Archivage des PDFs acquittés issus du mode direct
+├── composer.json       → Configuration des dépendances PHP utilisées par le projet
+├── composer.lock       → Verrou des versions de dépendances garantissant une installation identique
+├── LICENCE.md          → Licence d'utilisation du logiciel fournie par Palks Studio
+└── README_FR.md        → Documentation client expliquant l'utilisation du moteur
+```
 
 ---
 
@@ -92,7 +119,15 @@ factures_acquittees.zip
 ```
 
 
-**Le fichier original n'est jamais modifié.** Le tampon est appliqué sur une copie générée à la volée et supprimée après téléchargement.
+**Le fichier original n'est jamais modifié.**
+
+Le tampon est appliqué sur une copie générée à la volée.
+
+Selon la configuration du déploiement, cette copie peut également être archivée automatiquement côté serveur.
+
+Les PDFs acquittés générés sont destinés à servir de justificatifs visuels de paiement.
+
+Le moteur ne garantit pas la conservation des données XML Factur-X embarquées dans les fichiers PDF retraités.
 
 ---
 
