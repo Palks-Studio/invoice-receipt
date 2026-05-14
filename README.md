@@ -24,11 +24,9 @@ Add-on for the Factur-X EN16931 batch invoicing service. The batch generation en
 
 Password-protected web interface to stamp PDF invoices as "PAID" — one at a time or in bulk, with a client-structured ZIP export.
 
-This tool is designed to be deployed directly  
-within the client's environment.
+This tool is designed to be deployed directly within the client's environment.
 
-It allows a payment confirmation stamp to be applied  
-to existing PDF invoices and prepares them  
+It allows a payment confirmation stamp to be applied to existing PDF invoices and prepares them  
 for submission to the batch invoicing service.
 
 [![Batch Invoicing (Factur-X)](https://img.shields.io/badge/Batch%20Invoicing%20(Factur--X)-0095b1?style=flat)](https://palks-studio.com/en/batch-invoicing-facturx)
@@ -47,12 +45,42 @@ for submission to the batch invoicing service.
 
 No database is used.
 
-Files are processed temporarily during the stamping process  
-and downloaded immediately.
+Files are processed temporarily during the stamping process and downloaded immediately.
 
-Depending on the client environment configuration,  
-stamped invoices can also be archived  
+Depending on the client environment configuration, stamped invoices can also be archived  
 in a dedicated system directory.
+
+Optional archiving remains entirely local to the client environment.
+
+The engine distinguishes between:  
+
+- temporary files used during ZIP extraction and PDF generation  
+- paid invoice archives stored separately when this feature is enabled
+
+No database is used for document retention.
+
+---
+
+# Invoice Stamper — Project Structure
+
+```
+invoice-stamper/
+│
+├── tmp_stamper/        → Temporary folder used for ZIP extraction and stamped PDF generation
+│   └── .htaccess       → Blocks direct web access to the temporary directory
+│
+├── vendor/             → Composer dependencies required for the PDF engine (FPDI / FPDF libraries)
+│
+├── acquitter.php       → Public web interface accessible from the browser (loads the internal engine)
+├── invoice-stamper.php → Main application engine (authentication, ZIP processing, PDF generation)
+├── archives/           → Archive storage for paid invoices generated from batch ZIP processing
+├── archives_direct/    → Archive storage for paid PDFs generated from direct PDF stamping
+├── composer.json       → PHP dependency configuration used by the project
+├── composer.lock       → Dependency lock file ensuring identical installations
+├── LICENCE.md          → Software license provided by Palks Studio
+└── README.md           → Client documentation explaining how to use the tool
+```
+
 ---
 
 ## Requirements
@@ -92,7 +120,15 @@ factures_acquittees.zip
 ```
 
 
-**The original file is never modified.** The stamp is applied to a copy generated on the fly and deleted after download.
+**The original file is never modified.**
+
+The stamp is applied to a generated copy of the PDF.
+
+Depending on the deployment configuration, this generated copy may also be automatically archived on the server.
+
+Generated paid PDFs are intended to serve as visual proof of payment.
+
+The engine does not guarantee the preservation of embedded Factur-X XML data in processed PDF files.
 
 ---
 
