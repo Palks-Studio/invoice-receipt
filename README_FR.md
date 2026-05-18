@@ -65,17 +65,20 @@ Aucune base de données n’est utilisée pour la conservation des documents.
 ```
 invoice-stamper/
 │
-├── tmp_stamper/        → Dossier temporaire utilisé pour l'extraction des ZIP et la génération des PDFs
+├── temp_runtime/       → Dossier temporaire utilisé pour l'extraction des ZIP et la génération des PDFs
 │   └── .htaccess       → Bloque l'accès direct au dossier temporaire depuis le web
 │
 ├── vendor/             → Dépendances Composer nécessaires au moteur PDF (bibliothèques FPDI / FPDF)
+├── paid_archives/      → Archivage des factures acquittées issues du mode batch
+├── direct_archives/    → Archivage des PDFs acquittés issus du mode direct
+├── logs/               → Journaux d'erreurs
 │
-├── acquitter.php       → Interface web accessible depuis le navigateur (charge le moteur interne)
-├── invoice-stamper.php → Moteur principal de l'application (authentification, traitement ZIP, génération PDF)
-├── archives_zip/       → Archivage des factures acquittées issues du mode batch
-├── archives_pdf/       → Archivage des PDFs acquittés issus du mode direct
+├── access.php          → Interface web accessible depuis le navigateur (charge le moteur interne)
+├── stamper-engine.php  → Moteur principal de l'application (authentification, traitement ZIP, génération PDF)
+├── .htaccess           → Règles serveur empêchant l'accès direct aux fichiers internes du moteur
 ├── LICENCE.md          → Licence d'utilisation du logiciel fournie par Palks Studio
-└── README_FR.md        → Documentation client expliquant l'utilisation du moteur
+└── docs/
+    └── README_FR.md    → Documentation client expliquant l'utilisation du moteur
 ```
 
 ---
