@@ -75,7 +75,7 @@ invoice-stamper/
 ├── invoice-stamper.php → Main application engine (authentication, ZIP processing, PDF generation)
 ├── archives/           → Archive storage for paid invoices generated from batch ZIP processing
 ├── archives_direct/    → Archive storage for paid PDFs generated from direct PDF stamping
-├── LICENCE.md          → Software license provided by Palks Studio
+├── LICENSE.md          → Software license provided by Palks Studio
 └── README.md           → Client documentation explaining how to use the tool
 ```
 
