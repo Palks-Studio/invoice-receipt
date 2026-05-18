@@ -74,8 +74,6 @@ invoice-stamper/
 ├── invoice-stamper.php → Moteur principal de l'application (authentification, traitement ZIP, génération PDF)
 ├── archives_zip/       → Archivage des factures acquittées issues du mode batch
 ├── archives_pdf/       → Archivage des PDFs acquittés issus du mode direct
-├── composer.json       → Configuration des dépendances PHP utilisées par le projet
-├── composer.lock       → Verrou des versions de dépendances garantissant une installation identique
 ├── LICENCE.md          → Licence d'utilisation du logiciel fournie par Palks Studio
 └── README_FR.md        → Documentation client expliquant l'utilisation du moteur
 ```
